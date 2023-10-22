@@ -11,8 +11,9 @@ import hello.core.order.OrderServiceImpl;
 // 각 패키지 명을 딴 App 파일은 테스트 코드처럼 직접 실행해서 동작을 테스트하기 위해 만든 모듈
 public class OrderApp {
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
-        OrderService orderService = new OrderServiceImpl();
+        AppConfig appconfig = new AppConfig();
+        MemberService memberService = appconfig.memberService();
+        OrderService orderService = appconfig.orderService();
 
         Long memberId = 1L;
         Member member = new Member(memberId, "memberA", Grade.VIP);
